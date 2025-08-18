@@ -1,1 +1,152 @@
-Hello World ！
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        
+        .app-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease-out forwards;
+        }
+        
+        .app-icon:nth-child(1) { animation-delay: 0.2s; }
+        .app-icon:nth-child(2) { animation-delay: 0.3s; }
+        .app-icon:nth-child(3) { animation-delay: 0.4s; }
+        .app-icon:nth-child(4) { animation-delay: 0.5s; }
+        .app-icon:nth-child(5) { animation-delay: 0.6s; }
+        
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon:hover .icon-wrapper {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .app-icon img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+        
+        .app-name {
+            font-size: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 500px) {
+            .desktop-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="desktop-grid">
+            <a href="https://www.ipjiance.com/" class="app-icon" target="_blank">
+                <div class="icon-wrapper">
+                    <img src="https://www.ipjiance.com/favicon.ico" alt="IP检测" onerror="this.src='https://www.google.com/s2/favicons?domain=ipjiance.com'">
+                </div>
+                <div class="app-name">IP检测</div>
+            </a>
+            
+            <a href="https://www.ping0.cc/" class="app-icon" target="_blank">
+                <div class="icon-wrapper">
+                    <img src="https://www.ping0.cc/favicon.ico" alt="Ping测试" onerror="this.src='https://www.google.com/s2/favicons?domain=ping0.cc'">
+                </div>
+                <div class="app-name">Ping测试</div>
+            </a>
+            
+            <a href="https://www.speedtest.net/" class="app-icon" target="_blank">
+                <div class="icon-wrapper">
+                    <img src="https://www.speedtest.net/favicon.ico" alt="Speedtest" onerror="this.src='https://www.google.com/s2/favicons?domain=speedtest.net'">
+                </div>
+                <div class="app-name">Speedtest</div>
+            </a>
+            
+            <a href="https://fast.com/" class="app-icon" target="_blank">
+                <div class="icon-wrapper">
+                    <img src="https://fast.com/favicon.ico" alt="FAST" onerror="this.src='https://www.google.com/s2/favicons?domain=fast.com'">
+                </div>
+                <div class="app-name">FAST</div>
+            </a>
+            
+            <a href="https://speed.cloudflare.com/" class="app-icon" target="_blank">
+                <div class="icon-wrapper">
+                    <img src="https://speed.cloudflare.com/favicon.ico" alt="Cloudflare" onerror="this.src='https://www.google.com/s2/favicons?domain=cloudflare.com'">
+                </div>
+                <div class="app-name">Cloudflare</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
